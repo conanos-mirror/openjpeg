@@ -11,7 +11,7 @@ class OpenjpegConan(ConanFile):
     version = "2.3.0"
     description = "OpenJPEG is an open-source JPEG 2000 codec written in C language."
     options = {"shared": [True, False], "build_codec": [True, False], "fPIC": [True, False]}
-    default_options = {'shared': False, 'build_codec': True, 'fPIC': True}
+    default_options = {'shared': True, 'build_codec': True, 'fPIC': True}
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake"
     exports = "LICENSE.md"
@@ -24,10 +24,10 @@ class OpenjpegConan(ConanFile):
     _source_subfolder = "source_subfolder"
 
     requires = (
-        "zlib/1.2.11@conan/stable",
-        "lcms/2.9@bincrafters/stable",
-        "libpng/1.6.34@bincrafters/stable",
-        "libtiff/4.0.9@bincrafters/stable"
+        "zlib/1.2.11@conanos/dev",
+        #"lcms/2.9@bincrafters/stable",
+        "libpng/1.6.34@conanos/dev",
+        "libtiff/4.0.9@conanos/dev"
     )
 
     def config_options(self):
