@@ -1,11 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-
-from bincrafters import build_template_default
+from conanos.build import Main
 
 if __name__ == "__main__":
-
-    builder = build_template_default.get_builder()
-
-    builder.run()
+    Main('openjpeg',pure_c=True)
